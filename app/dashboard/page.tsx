@@ -7,6 +7,8 @@ import dbConnect from "@/lib/db";
 import Product from "@/lib/models/Product";
 import Order from "@/lib/models/Order";
 
+export const dynamic = "force-dynamic";
+
 async function getStats() {
     await dbConnect();
 
