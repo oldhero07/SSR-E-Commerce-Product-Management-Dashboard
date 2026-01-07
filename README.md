@@ -36,14 +36,6 @@ This project was built from scratch using a modern, scalable tech stack:
 *   **Vercel**: For zero-config, high-performance edge deployment.
 *   **TypeScript**: For type safety and better developer experience.
 
-## Tech Stack
-
-- **Framework**: Next.js 16 (App Router)
-- **Database**: MongoDB (Mongoose)
-- **Styling**: Tailwind CSS + Shadcn/ui
-- **Auth**: NextAuth.js
-- **Validation**: Zod + React Hook Form
-- **Charts**: Recharts
 
 ## Getting Started
 
