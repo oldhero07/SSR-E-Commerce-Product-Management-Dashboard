@@ -11,6 +11,31 @@ A robust, server-side rendered admin dashboard built with **Next.js 16**, **Mong
 - **Admin Management**: Secure onboarding for new administrators.
 - **Design**: Premium, responsive UI with dark/light mode support capability.
 
+## 🚀 Live Demo
+[**Click Here to View Live Deployment**](https://ssr-e-commerce-produc-git-ef2d13-sardanahimesh07-9529s-projects.vercel.app)
+
+## 🛠️ Stack & Technologies Used
+
+This project was built from scratch using a modern, scalable tech stack:
+
+### Frontend
+*   **Next.js 16 (App Router)**: For robust Server-Side Rendering (SSR) and efficient routing.
+*   **React 19**: Utilizing the latest React Server Components.
+*   **Tailwind CSS**: For a utility-first, responsive, and beautiful design system.
+*   **Shadcn/ui**: For accessible, high-quality UI components (Cards, Tables, Dialogs).
+*   **Recharts**: For dynamic, responsive data visualization charts.
+*   **Lucide React**: For clean, consistent iconography.
+
+### Backend & Database
+*   **MongoDB Atlas**: Cloud-hosted NoSQL database for flexible data storage.
+*   **Mongoose**: For elegant MongoDB object modeling and schema validation.
+*   **NextAuth.js**: For secure, session-based authentication (Credentials Provider).
+*   **Cloudinary**: For optimized image storage and delivery.
+
+### Deployment & DevOps
+*   **Vercel**: For zero-config, high-performance edge deployment.
+*   **TypeScript**: For type safety and better developer experience.
+
 ## Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
