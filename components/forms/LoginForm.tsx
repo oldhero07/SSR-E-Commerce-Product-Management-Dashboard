@@ -45,6 +45,11 @@ export default function LoginForm() {
             <CardHeader className="space-y-1">
                 <CardTitle className="text-2xl font-bold text-center">NexusAdmin</CardTitle>
                 <p className="text-center text-sm text-slate-500">Sign in to manage your inventory</p>
+                <div className="mt-2 text-center text-xs bg-slate-100 p-2 rounded-md border border-slate-200">
+                    <p className="font-semibold text-slate-700">Demo Credentials:</p>
+                    <p>Email: <code className="text-blue-600">admin@example.com</code></p>
+                    <p>Password: <code className="text-blue-600">admin123</code></p>
+                </div>
             </CardHeader>
             <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
