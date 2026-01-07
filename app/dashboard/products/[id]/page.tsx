@@ -4,12 +4,12 @@ import Product from "@/lib/models/Product";
 import { notFound } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 
-type Params = {
+type Props = {
     params: Promise<{ id: string }>
 }
 
-export default async function EditProductPage(props: { params: Params | Promise<Params> }) { // Handle potential type variances
-    const params = await props.params; // Modern Next.js access style
+export default async function EditProductPage(props: Props) {
+    const params = await props.params;
     const { id } = params;
 
     await dbConnect();
