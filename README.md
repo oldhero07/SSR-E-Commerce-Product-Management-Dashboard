@@ -12,7 +12,7 @@ A robust, server-side rendered admin dashboard built with **Next.js 16**, **Mong
 - **Design**: Premium, responsive UI with dark/light mode support capability.
 
 ## 🚀 Live Demo
-[**Click Here to View Live Deployment**](https://ssr-e-commerce-produc-git-ef2d13-sardanahimesh07-9529s-projects.vercel.app)
+[**Click Here to View Live Deployment**](https://ssr-e-commerce-product-management-dashboard-kn9cyuwoc.vercel.app)
 
 ## 🛠️ Stack & Technologies Used
 
