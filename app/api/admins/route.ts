@@ -4,6 +4,9 @@ import Admin from '@/lib/models/Admin';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth';
 import bcrypt from 'bcryptjs';
+import bcrypt from 'bcryptjs';
+
+export const dynamic = 'force-dynamic';
 
 export async function GET() {
     const session = await getServerSession(authOptions);
