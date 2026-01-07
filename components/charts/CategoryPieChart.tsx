@@ -25,7 +25,7 @@ export default function CategoryPieChart({ data }: { data: any[] }) {
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                 </Pie>
-                <Tooltip formatter={(value: number) => [value, 'Products']} />
+                <Tooltip formatter={(value: any) => [value, "Products"]} />
                 <Legend />
             </PieChart>
         </ResponsiveContainer>

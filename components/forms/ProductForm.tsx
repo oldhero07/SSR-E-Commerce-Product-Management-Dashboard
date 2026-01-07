@@ -37,14 +37,14 @@ export default function ProductForm({ initialData }: ProductFormProps) {
     const [uploading, setUploading] = useState(false);
 
     const form = useForm<ProductFormValues>({
-        resolver: zodResolver(formSchema),
-        defaultValues: initialData || {
-            name: "",
-            description: "",
-            price: 0,
-            stock: 0,
-            category: "",
-            images: [],
+        resolver: zodResolver(formSchema) as any,
+        defaultValues: {
+            name: initialData?.name || "",
+            description: initialData?.description || "",
+            price: initialData?.price || 0,
+            stock: initialData?.stock || 0,
+            category: initialData?.category || "",
+            images: initialData?.images || [],
         },
     });
 
@@ -182,6 +182,7 @@ export default function ProductForm({ initialData }: ProductFormProps) {
                     <div className="flex flex-wrap gap-4 mb-4">
                         {images.map((url) => (
                             <div key={url} className="relative w-24 h-24 border rounded overflow-hidden group">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img src={url} alt="Product" className="object-cover w-full h-full" />
                                 <button
                                     type="button"
