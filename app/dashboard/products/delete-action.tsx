@@ -14,13 +14,17 @@ export function DeleteAction({ id }: { id: string }) {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
 
-    const handleDelete = async (e: React.MouseEvent) => {
+    const handleDelete = async (e: Event) => {
         e.preventDefault();
         if (!confirm("Are you sure you want to delete this product?")) return;
         setLoading(true);
         try {
             await fetch(`/api/products/${id}`, { method: "DELETE" });
             router.refresh();
+            // Force a UI update just in case
+            setTimeout(() => {
+                window.location.reload();
+            }, 500);
         } catch (e) {
             alert("Failed to delete");
         } finally {
@@ -36,7 +40,7 @@ export function DeleteAction({ id }: { id: string }) {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={handleDelete} className="text-red-600 focus:text-red-600 cursor-pointer">
+                <DropdownMenuItem onSelect={handleDelete as any} className="text-red-600 focus:text-red-600 cursor-pointer">
                     {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : <Trash className="mr-2 h-4 w-4" />}
                     Delete
                 </DropdownMenuItem>
