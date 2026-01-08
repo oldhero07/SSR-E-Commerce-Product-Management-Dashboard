@@ -17,7 +17,7 @@ export async function GET(request: Request, { params }: Params) {
             return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
         }
         return NextResponse.json({ success: true, data: product });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ success: false, error: 'Failed to fetch product' }, { status: 500 });
     }
 }
@@ -38,8 +38,8 @@ export async function PUT(request: Request, { params }: Params) {
             return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
         }
         return NextResponse.json({ success: true, data: product });
-    } catch (error: any) {
-        return NextResponse.json({ success: false, error: error.message || 'Failed to update product' }, { status: 400 });
+    } catch (error) {
+        return NextResponse.json({ success: false, error: (error as Error).message || 'Failed to update product' }, { status: 400 });
     }
 }
 
@@ -55,7 +55,7 @@ export async function DELETE(request: Request, { params }: Params) {
             return NextResponse.json({ success: false, error: 'Product not found' }, { status: 404 });
         }
         return NextResponse.json({ success: true, data: {} });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ success: false, error: 'Failed to delete product' }, { status: 500 });
     }
 }

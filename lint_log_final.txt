@@ -1,0 +1,47 @@
+
+> temp_app@0.1.0 lint
+> eslint
+
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\admins\page.tsx
+  30:18  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  60:18  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\customers\page.tsx
+   3:28  warning  'CardTitle' is defined but never used  @typescript-eslint/no-unused-vars
+   5:19  warning  'Users' is defined but never used      @typescript-eslint/no-unused-vars
+  37:22  warning  'e' is defined but never used          @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\orders\page.tsx
+   3:28  warning  'CardTitle' is defined but never used     @typescript-eslint/no-unused-vars
+   4:10  warning  'Badge' is defined but never used         @typescript-eslint/no-unused-vars
+   6:19  warning  'ShoppingCart' is defined but never used  @typescript-eslint/no-unused-vars
+   6:67  warning  'CheckCircle' is defined but never used   @typescript-eslint/no-unused-vars
+  74:18  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  88:18  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\page.tsx
+  5:48  warning  'AlertTriangle' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\products\delete-action.tsx
+  38:18  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\products\page.tsx
+  48:8   warning  React Hook useEffect has missing dependencies: 'pathname', 'router', and 'searchParams'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  59:18  warning  'error' is defined but never used                                                                                                            @typescript-eslint/no-unused-vars
+  68:8   warning  React Hook useEffect has a missing dependency: 'fetchProducts'. Either include it or remove the dependency array                             react-hooks/exhaustive-deps
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\forgot-password\page.tsx
+  2:8  warning  'Link' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\components\charts\OverviewChart.tsx
+  3:69  warning  'TooltipProps' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\components\forms\LoginForm.tsx
+  37:18  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\lib\auth.ts
+  1:8  warning  'NextAuth' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 20 problems (0 errors, 20 warnings)
+

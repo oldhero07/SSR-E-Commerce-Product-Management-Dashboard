@@ -1,0 +1,92 @@
+
+> temp_app@0.1.0 lint
+> eslint
+
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\api\admins\route.ts
+  18:14  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  39:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\api\orders\[id]\route.ts
+  38:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  61:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\api\orders\route.ts
+   4:8   warning  'Product' is defined but never used       @typescript-eslint/no-unused-vars
+  18:14  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  35:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\api\products\[id]\route.ts
+  20:14  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  41:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  58:14  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\api\products\route.ts
+  38:14  warning  'error' is defined but never used         @typescript-eslint/no-unused-vars
+  54:21  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\api\upload\route.ts
+  29:42  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  45:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\admins\page.tsx
+  30:18  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+  60:18  warning  'error' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\customers\page.tsx
+   3:28  warning  'CardTitle' is defined but never used  @typescript-eslint/no-unused-vars
+   5:19  warning  'Users' is defined but never used      @typescript-eslint/no-unused-vars
+  37:22  warning  'e' is defined but never used          @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\orders\page.tsx
+   3:28  warning  'CardTitle' is defined but never used     @typescript-eslint/no-unused-vars
+   4:10  warning  'Badge' is defined but never used         @typescript-eslint/no-unused-vars
+   6:19  warning  'ShoppingCart' is defined but never used  @typescript-eslint/no-unused-vars
+   6:67  warning  'CheckCircle' is defined but never used   @typescript-eslint/no-unused-vars
+  74:18  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+  88:18  warning  'e' is defined but never used             @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\page.tsx
+  5:48  warning  'AlertTriangle' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\products\delete-action.tsx
+  38:18  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\dashboard\products\page.tsx
+  48:8   warning  React Hook useEffect has missing dependencies: 'pathname', 'router', and 'searchParams'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  59:18  warning  'error' is defined but never used                                                                                                            @typescript-eslint/no-unused-vars
+  68:8   warning  React Hook useEffect has a missing dependency: 'fetchProducts'. Either include it or remove the dependency array                             react-hooks/exhaustive-deps
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\app\forgot-password\page.tsx
+   2:8   warning  'Link' is defined but never used                                 @typescript-eslint/no-unused-vars
+  13:48  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\components\charts\CategoryPieChart.tsx
+   6:11  warning  'DataPoint' is defined but never used     @typescript-eslint/no-unused-vars
+  11:60  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  28:45  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\components\charts\OverviewChart.tsx
+  3:69  warning  'TooltipProps' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\components\forms\LoginForm.tsx
+  37:18  warning  'err' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\components\forms\ProductForm.tsx
+   8:74  warning  'FormDescription' is defined but never used  @typescript-eslint/no-unused-vars
+  10:10  warning  'Textarea' is defined but never used         @typescript-eslint/no-unused-vars
+  11:10  warning  'Card' is defined but never used             @typescript-eslint/no-unused-vars
+  11:16  warning  'CardContent' is defined but never used      @typescript-eslint/no-unused-vars
+  30:19  error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+  40:46  error    Unexpected any. Specify a different type     @typescript-eslint/no-explicit-any
+  69:18  warning  'error' is defined but never used            @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\lib\auth.ts
+  1:8  warning  'NextAuth' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\sarda\Downloads\e-commerce-admin-dashboard\lib\db.ts
+  18:5  error  'cached' is never reassigned. Use 'const' instead  prefer-const
+
+✖ 46 problems (14 errors, 32 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+

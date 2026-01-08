@@ -43,12 +43,12 @@ export default function LoginForm() {
     return (
         <Card className="w-[400px] shadow-lg">
             <CardHeader className="space-y-1">
-                <CardTitle className="text-2xl font-bold text-center">NexusAdmin</CardTitle>
-                <p className="text-center text-sm text-slate-500">Sign in to manage your inventory</p>
-                <div className="mt-2 text-center text-xs bg-slate-100 p-2 rounded-md border border-slate-200">
-                    <p className="font-semibold text-slate-700">Demo Credentials:</p>
-                    <p>Email: <code className="text-blue-600">admin@example.com</code></p>
-                    <p>Password: <code className="text-blue-600">admin123</code></p>
+                <CardTitle className="text-2xl font-bold text-center font-serif">NexusAdmin</CardTitle>
+                <p className="text-center text-sm text-muted-foreground">Sign in to manage your inventory</p>
+                <div className="mt-2 text-center text-xs bg-muted p-2 rounded-md border border-border">
+                    <p className="font-semibold text-foreground">Demo Credentials:</p>
+                    <p>Email: <code className="text-primary font-bold">admin@example.com</code></p>
+                    <p>Password: <code className="text-primary font-bold">admin123</code></p>
                 </div>
             </CardHeader>
             <CardContent>
@@ -65,7 +65,10 @@ export default function LoginForm() {
                         />
                     </div>
                     <div className="space-y-2">
-                        <Label htmlFor="password">Password</Label>
+                        <div className="flex items-center justify-between">
+                            <Label htmlFor="password">Password</Label>
+                            <a href="/forgot-password" className="text-xs text-primary hover:underline">Forgot password?</a>
+                        </div>
                         <Input
                             id="password"
                             type="password"
@@ -81,13 +84,13 @@ export default function LoginForm() {
                             <AlertDescription>{error}</AlertDescription>
                         </Alert>
                     )}
-                    <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700" disabled={loading}>
+                    <Button type="submit" className="w-full" disabled={loading}>
                         {loading ? "Signing in..." : "Sign In"}
                     </Button>
                 </form>
             </CardContent>
             <CardFooter className="justify-center">
-                <p className="text-xs text-slate-400">Protected by NextAuth.js</p>
+                <p className="text-xs text-muted-foreground">Protected by NextAuth.js</p>
             </CardFooter>
         </Card>
     );

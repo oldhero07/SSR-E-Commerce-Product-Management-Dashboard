@@ -15,7 +15,7 @@ export async function GET() {
     try {
         const admins = await Admin.find({}, { password: 0 }).sort({ createdAt: -1 });
         return NextResponse.json({ success: true, data: admins });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ success: false, error: 'Failed to fetch admins' }, { status: 500 });
     }
 }
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
         const admin = await Admin.create({ email, password: hashedPassword });
 
         return NextResponse.json({ success: true, data: { email: admin.email, _id: admin._id } }, { status: 201 });
-    } catch (error: any) {
-        return NextResponse.json({ success: false, error: error.message || 'Failed to create admin' }, { status: 400 });
+    } catch (error) {
+        return NextResponse.json({ success: false, error: (error as Error).message || 'Failed to create admin' }, { status: 400 });
     }
 }

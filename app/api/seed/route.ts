@@ -1,11 +1,19 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import dbConnect from '@/lib/db';
 import Admin from '@/lib/models/Admin';
 import bcrypt from 'bcryptjs';
 import Product from '@/lib/models/Product';
 import Order from '@/lib/models/Order';
 
-export async function GET() {
+export async function GET(req: NextRequest) {
+    const SEED_SECRET = process.env.SEED_SECRET;
+    const { searchParams } = new URL(req.url);
+    const secret = searchParams.get('secret');
+
+    if (secret !== SEED_SECRET) {
+        return NextResponse.json({ message: 'Unauthorized: Invalid or missing secret' }, { status: 401 });
+    }
+
     try {
         await dbConnect();
 

@@ -5,15 +5,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, FormDescription } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea"; // Need to ensure shadcn added textarea? Usually input is separate. I'll use native textarea or Input if standard. Shadcn has textarea component usually. I'll fallback to Input for now or standard <textarea> styled.
-import { Card, CardContent } from "@/components/ui/card";
-import { Loader2, X } from "lucide-react";
 
-// Assuming Textarea component exists or use standard
-// I'll assume standard Shadcn init includes Textarea if I asked? I asked for input/form. Textarea is separate package usually `shadcn add textarea`.
-// I'll stick to Input for description or <textarea> with className.
+import { Loader2, X } from "lucide-react";
 
 const formSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters."),
@@ -26,8 +21,18 @@ const formSchema = z.object({
 
 type ProductFormValues = z.infer<typeof formSchema>;
 
+interface ProductData {
+    _id: string;
+    name: string;
+    description: string;
+    price: number;
+    stock: number;
+    category: string;
+    images: string[];
+}
+
 interface ProductFormProps {
-    initialData?: any; // strict typing later
+    initialData?: ProductData | null;
 }
 
 export default function ProductForm({ initialData }: ProductFormProps) {
@@ -37,6 +42,7 @@ export default function ProductForm({ initialData }: ProductFormProps) {
     const [uploading, setUploading] = useState(false);
 
     const form = useForm<ProductFormValues>({
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         resolver: zodResolver(formSchema) as any,
         defaultValues: {
             name: initialData?.name || "",
@@ -66,8 +72,8 @@ export default function ProductForm({ initialData }: ProductFormProps) {
 
             router.push("/dashboard/products");
             router.refresh();
-        } catch (error) {
-            alert("Something went wrong."); // Implement toast later
+        } catch {
+            alert("Something went wrong.");
         } finally {
             setLoading(false);
         }

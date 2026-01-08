@@ -9,6 +9,12 @@ cloudinary.config({
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+
+interface CloudinaryResponse {
+    secure_url: string;
+    public_id: string;
+}
+
 export async function POST(request: Request) {
     const session = await getServerSession(authOptions);
     if (!session) {
@@ -26,12 +32,12 @@ export async function POST(request: Request) {
         const arrayBuffer = await file.arrayBuffer();
         const buffer = Buffer.from(arrayBuffer);
 
-        const result = await new Promise<any>((resolve, reject) => {
+        const result = await new Promise<CloudinaryResponse>((resolve, reject) => {
             const uploadStream = cloudinary.uploader.upload_stream(
                 { folder: 'ecommerce-admin', resource_type: 'auto' },
                 (error, result) => {
                     if (error) reject(error);
-                    else resolve(result);
+                    else resolve(result as unknown as CloudinaryResponse);
                 }
             );
             uploadStream.end(buffer);
@@ -42,7 +48,7 @@ export async function POST(request: Request) {
             public_id: result.public_id
         });
 
-    } catch (error: any) {
-        return NextResponse.json({ error: error.message || 'Upload failed' }, { status: 500 });
+    } catch (error) {
+        return NextResponse.json({ error: (error as Error).message || 'Upload failed' }, { status: 500 });
     }
 }

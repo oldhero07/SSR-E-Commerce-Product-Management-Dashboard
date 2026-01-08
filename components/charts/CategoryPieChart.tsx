@@ -6,9 +6,10 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8'];
 interface DataPoint {
     name: string;
     value: number;
+    [key: string]: string | number;
 }
 
-export default function CategoryPieChart({ data }: { data: any[] }) {
+export default function CategoryPieChart({ data }: { data: DataPoint[] }) {
     return (
         <ResponsiveContainer width="100%" height={300}>
             <PieChart>
@@ -25,7 +26,7 @@ export default function CategoryPieChart({ data }: { data: any[] }) {
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                 </Pie>
-                <Tooltip formatter={(value: any) => [value, "Products"]} />
+                <Tooltip formatter={(value: number | string | undefined) => [value, "Products"]} />
                 <Legend />
             </PieChart>
         </ResponsiveContainer>

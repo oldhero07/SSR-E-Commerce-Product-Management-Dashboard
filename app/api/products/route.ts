@@ -35,7 +35,7 @@ export async function GET(request: Request) {
                 totalPages: Math.ceil(total / limit)
             }
         });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ success: false, error: 'Failed to fetch products' }, { status: 500 });
     }
 }
@@ -51,7 +51,7 @@ export async function POST(request: Request) {
         const body = await request.json();
         const product = await Product.create(body);
         return NextResponse.json({ success: true, data: product }, { status: 201 });
-    } catch (error: any) {
-        return NextResponse.json({ success: false, error: error.message || 'Failed to create product' }, { status: 400 });
+    } catch (error) {
+        return NextResponse.json({ success: false, error: (error as Error).message || 'Failed to create product' }, { status: 400 });
     }
 }
